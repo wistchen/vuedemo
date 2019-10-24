@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据与方法</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{a}}
+</div>
+<script>
+    //我们的数据对象
+    var data = {a:1};
+    //对象被加到vue中
+    var vm = new Vue({
+        el:'#app',
+        data: data
+    });
+    //修改对象
+   // data.a = "hi...wistchen"
+    //$watch是一个实例方法
+    vm.$watch('a',function (newValue,oldValue) {
+        console.log(newValue,oldValue);
+    })
+
+    vm.$data.a = "test...."
+
+</script>
+</body>
+</html>
